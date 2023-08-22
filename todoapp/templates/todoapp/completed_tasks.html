@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Completed Tasks</title>
+    <!-- Include Bootstrap CSS here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS here for premium design -->
+    
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Completed Tasks</h1>
+        <ul class="list-group">
+            {% for task in tasks %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ task.taskTitle }}
+                    <span class="badge badge-success badge-pill">Completed</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'show_tasks' %}" class="btn btn-primary mt-3">Back to Tasks</a>
+    </div>
+    <!-- Include Bootstrap JS here -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
